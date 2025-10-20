@@ -33,6 +33,7 @@ contract SimpleBank {
     }
 
     function deposit() external payable onlyApprovedValue returns (uint256) {
+        require(bytes(accounts[msg.sender].name).length > 0, "Not registered yet");
         accounts[msg.sender].balance += msg.value;
         uint256 x = accounts[msg.sender].balance;
         emit Deposit(msg.sender, msg.value);

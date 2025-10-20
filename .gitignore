@@ -1,4 +1,5 @@
 .wake
+.vscode
 .env
 pytypes
 __pycache__/
